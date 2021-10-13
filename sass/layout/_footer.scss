@@ -6,7 +6,7 @@ footer {
 .footer_container {
     max-width: 1440px;
     margin: auto;
-    padding: 2rem;
+    padding: 2rem 2rem 1.5rem 2rem;
 }
 
 footer ul {
@@ -17,7 +17,18 @@ footer li {
 padding-bottom: 0.75rem;
 }
 
+.fa-utensils {
+    width: 20px;
+    font-size: 0.875rem;
+}
+
+.fa-hands-helping {
+    width: 20px;
+    font-size: 0.875rem;
+}
+
 footer a {
     text-decoration: none;
     color: $colour-white;
 }
+
