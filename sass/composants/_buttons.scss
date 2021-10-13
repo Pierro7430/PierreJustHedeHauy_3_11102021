@@ -86,13 +86,16 @@
     padding: 0.75rem 1rem 0.75rem 0.75rem;
     box-shadow: $shadow-menu;
     border-radius: 15px;
+
+    h3 {
+        font-size: 1.125rem;
+    }
 }
-.menu_card h3 {
-    font-size: 1.125rem;
-}
+
 .menu_card_body p {
     font-size: 0.875rem;
 }
+
 .menu_card_price {
     font-size: 0.875rem;
     font-weight: 700;
