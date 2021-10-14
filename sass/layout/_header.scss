@@ -1,24 +1,26 @@
-header {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    padding: 1.25rem 0rem 0.875rem 0rem;
+.container_header {
+    @include dimension-general;
     position: relative;
-}
+    padding: $space-regular 0rem $space-small 0rem;
+    text-align: center;
 
-.logo {
-    max-width: 50%;
-    
-}
+    &__home {
+        width: 100%;
 
-.header-icone  {
-    position: absolute;
-    left: 5%;
-    top: 35%;
-    font-size: 1.5rem; 
-    
-    a {
-        color: $colour-dark-grey;
-        text-decoration: none;
+        img {
+            max-width: 45%;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        left: 5%;
+        top: 30%;
+        font-size: $font-XXlarge;
+
+        &__link {
+            color: $colour-dark-grey;
+            text-decoration: none;
+        }
     }
 }

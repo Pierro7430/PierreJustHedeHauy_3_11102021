@@ -1,55 +1,55 @@
 .illu {
-    height: 200px;
+    height: 250px;
     overflow: hidden;
 
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
 }
 
-.img_menu {
 
-    object-fit: cover;
-    height: 100%;
-    width: 110%;
-    
-}
-
-.menu {
+.main {
     background-color: $colour-extralight-grey;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    padding: 2rem 1.5rem;
-    margin-top: -50px;
+    border-top-left-radius: $border-radius-big;
+    border-top-right-radius: $border-radius-big;
+    padding: $space-large $space-medium;
+    margin-top: -3rem;
     position: relative;
-}
 
-.menu_header {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 1rem;
-}
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding-right: $space-regular;
 
-.menu_title {
-    font-family: 'Shrikhand';
-    font-weight: 500;
-    font-size: 1.5rem;
-}
+        &__title {
+            font-family: 'Shrikhand';
+            font-weight: $font-weight-medium;
+            font-size: $font-XXlarge;
+        }
 
-.menu_header i {
-    font-size: 1.5rem;
-    color: $colour-middle-grey;
-}
+        &__icon {
+            font-size: $font-XXlarge;
+            color: $colour-middle-grey;
+        }
+    }
 
-.menu_category {
-    text-transform: uppercase;
-    padding: 2rem 0rem 1rem 0rem;
-}
+    &__category {
+        font-size: $space-regular;
+        font-weight: $font-weight-regular;
+        text-transform: uppercase;
+        padding: $space-large 0rem $space-regular 0rem;
+    }
 
-.menu_container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: $space-regular;
+    }
 
-.menu_btn {
-    text-align: center;
-    padding: 2.813rem 0rem 1rem 0rem;
+    &__btn {
+        text-align: center;
+        padding: $space-XXlarge 0rem $space-regular 0rem;
+    }
 }

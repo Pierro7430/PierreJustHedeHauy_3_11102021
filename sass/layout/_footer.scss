@@ -1,34 +1,47 @@
-footer {
-    background-color: $colour-dark-grey;
-    color: $colour-white;
-}
-
 .footer_container {
-    max-width: 1440px;
-    margin: auto;
-    padding: 2rem 2rem 1.5rem 2rem;
+    @include dimension-general;
+    padding: $space-large $space-medium $space-medium $space-medium;
+
+    &__logo {
+        font-family: 'Shrikhand';
+        font-size: $font-medium;
+        font-weight: $font-weight-regular;
+        color: $colour-white;
+    }
+
+
+    &__links {
+        padding-top: $space-medium;
+        display: flex;
+        flex-direction: column;
+        gap: $space-small;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: $space-regular;
+            
+
+            .footer-icon {
+                width: 15px;
+                font-size: $font-small;
+                color: $colour-white;
+            }
+
+            .footer-link {
+                text-decoration: none;
+                color: $colour-white;
+                font-size: $font-small;
+            }
+        }
+    }
 }
 
-footer ul {
-    padding-top: 1.5rem;
-}
 
-footer li {
-padding-bottom: 0.75rem;
-}
+    
 
-.fa-utensils {
-    width: 20px;
-    font-size: 0.875rem;
-}
+   
 
-.fa-hands-helping {
-    width: 20px;
-    font-size: 0.875rem;
-}
 
-footer a {
-    text-decoration: none;
-    color: $colour-white;
-}
+
 

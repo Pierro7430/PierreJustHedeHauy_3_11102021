@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -54,13 +55,27 @@ table {
 
 /*Couleurs*/
 /*-------------------*/
-/*Sadow*/
+/*Shadow*/
 /*-------------------*/
+/*Font*/
+/*-------------------*/
+/*Size*/
+/*Weight*/
+/*Spacing*/
+/*-------------------*/
+/*Border Radius*/
+/*-------------------*/
+/*Valeurs particulières*/
+/*--------------------------*/
+/*Taille du cercle de l'icône numéro sur la step_card*/
+.shadow-top {
+  box-shadow: inset 0px 4px 10px -7px #7E7E7E;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.125rem;
 }
 
 h1 {
@@ -71,151 +86,261 @@ h1 {
   margin: 0;
 }
 
-h3 {
-  font-size: 1rem;
+h2 {
+  font-size: 1.375rem;
   font-weight: 900;
   line-height: 1.5rem;
   padding: 0;
   margin: 0;
 }
 
-.font-logo {
-  font-family: "Shrikhand";
-  font-size: 1rem;
-}
-
-p {
-  line-height: 1rem;
+h3 {
+  font-size: 1.125rem;
+  font-weight: 900;
+  line-height: 1.125rem;
   padding: 0;
   margin: 0;
 }
 
-header {
+p {
+  line-height: 1.25rem;
+  padding: 0;
+  margin: 0;
+}
+
+.background {
   width: 100%;
+  height: auto;
+}
+.background--dark-grey {
+  background-color: #353535;
+}
+.background--middle-grey {
+  background-color: #7E7E7E;
+}
+.background--light-grey {
+  background-color: #EAEAEA;
+}
+.background--extralight-grey {
+  background-color: #F6F6F6;
+}
+
+.container_header {
+  max-width: 1440px;
+  width: auto;
   margin: auto;
-  text-align: center;
-  padding: 1.25rem 0rem 0.875rem 0rem;
   position: relative;
+  padding: 1rem 0rem 0.75rem 0rem;
+  text-align: center;
 }
-
-.logo {
-  max-width: 50%;
+.container_header__home {
+  width: 100%;
 }
-
-.header-icone {
+.container_header__home img {
+  max-width: 45%;
+}
+.container_header__icon {
   position: absolute;
   left: 5%;
-  top: 35%;
+  top: 30%;
   font-size: 1.5rem;
 }
-.header-icone a {
+.container_header__icon__link {
   color: #353535;
   text-decoration: none;
 }
 
-footer {
-  background-color: #353535;
-  color: #fff;
-}
-
 .footer_container {
   max-width: 1440px;
+  width: auto;
   margin: auto;
-  padding: 2rem 2rem 1.5rem 2rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
 }
-
-footer ul {
+.footer_container__logo {
+  font-family: "Shrikhand";
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #fff;
+}
+.footer_container__links {
   padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
-
-footer li {
-  padding-bottom: 0.75rem;
+.footer_container__links li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-
-.fa-utensils {
-  width: 20px;
+.footer_container__links li .footer-icon {
+  width: 15px;
   font-size: 0.875rem;
+  color: #fff;
 }
-
-.fa-hands-helping {
-  width: 20px;
-  font-size: 0.875rem;
-}
-
-footer a {
+.footer_container__links li .footer-link {
   text-decoration: none;
   color: #fff;
+  font-size: 0.875rem;
 }
 
 .localization {
+  max-width: 1440px;
+  width: auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  padding: 1rem 0rem;
+}
+.localization__icon {
+  font-size: 0.875rem;
+}
+.localization__text {
+  font-size: 0.875rem;
   font-weight: 500;
-  background-color: #EAEAEA;
-  padding: 0.875rem 0rem;
-  box-shadow: inset 0px 4px 10px -7px #7E7E7E;
 }
 
-.main-container {
+.main_container {
+  max-width: 1440px;
+  width: auto;
+  margin: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
   text-align: center;
-  padding: 2.813rem 0rem 3.438rem 0rem;
-  background-color: #F6F6F6;
 }
-
-.main-container_title {
+.main_container__title {
   padding: 0rem 3rem;
 }
-
-.main-container_text {
-  padding: 0.75rem 1.25rem 1.5rem 1.25rem;
+.main_container__text {
+  padding: 0.75rem 1.5rem 1.5rem 1.5rem;
 }
-
-.main-container_btn {
+.main_container__btn {
   padding: 1rem 0rem;
 }
 
 .step {
   max-width: 1440px;
+  width: auto;
   margin: auto;
-  padding: 2.813rem 2rem 3.438rem 2rem;
+  padding: 3rem 1.5rem 3.5rem 1.5rem;
 }
-
-.step_storage {
+.step__storage {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding-top: 1.25rem;
+  padding-top: 1.5rem;
+  /*Le padding-left dépend de la taille du cercle divisé par deux*/
   padding-left: 10px;
 }
 
+#restaurant {
+  max-width: 1440px;
+  width: auto;
+  margin: auto;
+  padding: 3rem 1.5rem 3.5rem 1.5rem;
+  background-color: #F6F6F6;
+}
+#restaurant .restaurant__storage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.illu {
+  height: 250px;
+  overflow: hidden;
+}
+.illu img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  background-color: #F6F6F6;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 2rem 1.5rem;
+  margin-top: -3rem;
+  position: relative;
+}
+.main__header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+.main__header__title {
+  font-family: "Shrikhand";
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.main__header__icon {
+  font-size: 1.5rem;
+  color: #7E7E7E;
+}
+.main__category {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 2rem 0rem 1rem 0rem;
+}
+.main__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main__btn {
+  text-align: center;
+  padding: 3rem 0rem 1rem 0rem;
+}
+
+/*Button principal*/
+/*-------------------*/
+.btn_main {
+  border: none;
+  border-radius: 40px;
+  background-color: #9356DC;
+  background: linear-gradient(to bottom right, #FF79DA 10%, #9356DC 100%);
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 10px 16px -10px #7E7E7E;
+  text-decoration: none;
+}
+.btn_main--longer {
+  padding: 1rem 3.5rem;
+}
+
+/*Card Step*/
+/*------------------*/
 .step_card {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding: 1rem 0rem;
-  border-radius: 1.25rem;
+  padding: 1rem 1.5rem 1rem 0rem;
+  border-radius: 20px;
   background-color: #F6F6F6;
   box-shadow: 0px 10px 16px -15px #7E7E7E;
   position: relative;
+  box-sizing: border-box;
 }
-
-.step_icone {
+.step_card__icon {
   text-align: center;
   color: #7E7E7E;
   width: 20px;
   padding: 0.5rem 1.5rem;
 }
-
-.step_txt {
+.step_card__text {
   font-size: 0.875rem;
   font-weight: 700;
 }
-
-.step-number {
+.step_card__number {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -226,100 +351,8 @@ footer a {
   justify-content: center;
   align-items: center;
   position: absolute;
+  /*La position dépend de la taille du cercle divisé par deux (multiplié par moins 1 car il est positionné en négatif)*/
   left: -10px;
-}
-
-.restaurant {
-  max-width: 1440px;
-  margin: auto;
-  padding: 2.813rem 2rem 3.438rem 2rem;
-  background-color: #F6F6F6;
-}
-
-.restaurant_storage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  padding-top: 1.25rem;
-}
-
-.illu {
-  height: 200px;
-  overflow: hidden;
-}
-
-.img_menu {
-  object-fit: cover;
-  height: 100%;
-  width: 110%;
-}
-
-.menu {
-  background-color: #F6F6F6;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  padding: 2rem 1.5rem;
-  margin-top: -50px;
-  position: relative;
-}
-
-.menu_header {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 1rem;
-}
-
-.menu_title {
-  font-family: "Shrikhand";
-  font-weight: 500;
-  font-size: 1.5rem;
-}
-
-.menu_header i {
-  font-size: 1.5rem;
-  color: #7E7E7E;
-}
-
-.menu_category {
-  text-transform: uppercase;
-  padding: 2rem 0rem 1rem 0rem;
-}
-
-.menu_container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.menu_btn {
-  text-align: center;
-  padding: 2.813rem 0rem 1rem 0rem;
-}
-
-/*Button principal*/
-/*-------------------*/
-.btn_main {
-  border: none;
-  border-radius: 2rem;
-  background-color: #9356DC;
-  background: linear-gradient(to bottom right, #FF79DA 10%, #9356DC 100%);
-  color: #fff;
-  font-size: 0.875rem;
-  padding: 1rem 1.5rem;
-  box-shadow: 0px 10px 16px -10px #7E7E7E;
-  text-decoration: none;
-}
-
-.btn_main--longer {
-  border: none;
-  border-radius: 2rem;
-  background-color: #9356DC;
-  background: linear-gradient(to bottom right, #FF79DA 10%, #9356DC 100%);
-  color: #fff;
-  padding: 1rem 3rem;
-  box-shadow: 0px 10px 16px -10px #7E7E7E;
-  cursor: pointer;
 }
 
 /*Card Restaurant*/
@@ -329,39 +362,38 @@ footer a {
   flex-direction: column;
   width: 100%;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0px 10px 16px -15px #7E7E7E;
   cursor: pointer;
   position: relative;
 }
-.restaurant_card a {
+.restaurant_card__img {
+  width: 100%;
+  height: 150px;
+}
+.restaurant_card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restaurant_card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+}
+.restaurant_card__text {
+  padding-top: 0.25rem;
+}
+.restaurant_card__link {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 }
-
-.restaurant_card_img {
-  width: 100%;
-  height: 150px;
-}
-
-.img_restaurant {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.restaurant_card_body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
-}
-
-.restaurant_card_body i {
+.restaurant_card__icon {
   font-size: 1.25rem;
   color: #7E7E7E;
 }
@@ -373,21 +405,26 @@ footer a {
   justify-content: space-between;
   align-items: flex-end;
   background-color: #fff;
-  padding: 0.75rem 1rem 0.75rem 0.75rem;
+  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
   box-shadow: 0px 2px 8px -5px #7E7E7E;
-  border-radius: 15px;
+  border-radius: 20px;
 }
-.menu_card h3 {
-  font-size: 1.125rem;
+.menu_card__body {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-
-.menu_card_body p {
+.menu_card__body__title {
+  font-weight: 700;
+}
+.menu_card__body__text {
   font-size: 0.875rem;
+  padding-top: 0.25rem;
 }
-
-.menu_card_price {
+.menu_card__price {
   font-size: 0.875rem;
   font-weight: 700;
+  padding-left: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

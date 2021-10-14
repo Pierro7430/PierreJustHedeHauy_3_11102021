@@ -1,33 +1,36 @@
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.125rem;
+    font-weight: $font-weight-regular;
+    font-size: $font-regular;
 }
 
 h1 {
-    font-size: 1.375rem;
-    font-weight: 900;
-    line-height: 1.5rem;
+    font-size: $font-Xlarge;
+    font-weight: $font-weight-extrabold;
+    line-height: $font-XXlarge;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: $font-Xlarge;
+    font-weight: $font-weight-extrabold;
+    line-height: $font-XXlarge;
     padding: 0;
     margin: 0;
 }
 
 h3 {
-    font-size: 1rem;
-    font-weight: 900;
-    line-height: 1.5rem;
+    font-size: $font-medium;
+    font-weight: $font-weight-extrabold;
+    line-height: $font-medium;
     padding: 0;
     margin: 0;
 }
 
-.font-logo {
-    font-family: 'Shrikhand';
-    font-size: 1rem;
-}
 
 p {
-    line-height: 1rem;
+    line-height: $font-large;
     padding: 0;
     margin: 0;
 }
