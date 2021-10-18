@@ -1,9 +1,9 @@
 .footer_container {
-    @include dimension-general;
+    @include current-size;
     padding: $space-large $space-medium $space-medium $space-medium;
 
     &__logo {
-        font-family: 'Shrikhand';
+        font-family: $font-logo;
         font-size: $font-medium;
         font-weight: $font-weight-regular;
         color: $colour-white;
@@ -32,6 +32,11 @@
                 text-decoration: none;
                 color: $colour-white;
                 font-size: $font-small;
+
+                &:active, &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                }
             }
         }
     }

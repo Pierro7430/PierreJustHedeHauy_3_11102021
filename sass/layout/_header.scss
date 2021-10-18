@@ -1,5 +1,5 @@
 .container_header {
-    @include dimension-general;
+    @include current-size;
     position: relative;
     padding: $space-regular 0rem $space-small 0rem;
     text-align: center;

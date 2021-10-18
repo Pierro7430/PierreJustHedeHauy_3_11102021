@@ -59,6 +59,7 @@ table {
 /*-------------------*/
 /*Font*/
 /*-------------------*/
+/*Family*/
 /*Size*/
 /*Weight*/
 /*Spacing*/
@@ -183,6 +184,10 @@ p {
   color: #fff;
   font-size: 0.875rem;
 }
+.footer_container__links li .footer-link:active, .footer_container__links li .footer-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 .localization {
   max-width: 1440px;
@@ -299,6 +304,45 @@ p {
   padding: 3rem 0rem 1rem 0rem;
 }
 
+.loader {
+  color: #FF79DA;
+  font-size: 20px;
+  margin: 100px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: load4 1s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes load4 {
+  0%, 100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
 /*Button principal*/
 /*-------------------*/
 .btn_main {
@@ -311,6 +355,10 @@ p {
   padding: 1rem 1.5rem;
   box-shadow: 0px 10px 16px -10px #7E7E7E;
   text-decoration: none;
+}
+.btn_main:active, .btn_main:hover {
+  background: linear-gradient(to bottom right, #ff93e1 10%, #a16be0 100%);
+  box-shadow: 0px 10px 16px -10px #3e3e3e;
 }
 .btn_main--longer {
   padding: 1rem 3.5rem;
@@ -368,6 +416,9 @@ p {
   cursor: pointer;
   position: relative;
 }
+.restaurant_card:active, .restaurant_card:hover {
+  box-shadow: 0px 10px 20px -10px #3e3e3e;
+}
 .restaurant_card__img {
   width: 100%;
   height: 150px;
@@ -408,6 +459,9 @@ p {
   padding: 0.75rem 1.5rem 0.75rem 0.75rem;
   box-shadow: 0px 2px 8px -5px #7E7E7E;
   border-radius: 20px;
+}
+.menu_card:active, .menu_card:hover {
+  box-shadow: 0px 2px 15px -5px #7E7E7E;
 }
 .menu_card__body {
   overflow: hidden;

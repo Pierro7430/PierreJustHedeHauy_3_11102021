@@ -3,17 +3,24 @@
 
 .btn_main {
     border: none;
-    border-radius: 40px;
+    border-radius: $border-radius-stronger;
     background-color: $colour-primary;
-    background: linear-gradient(to bottom right, $colour-secondary 10%, $colour-primary 100%);
+    background: $colour-gradient;
     color: $colour-white;
     font-size: $font-small;
     padding: $space-regular $space-medium;
     box-shadow: $shadow-btn;
     text-decoration: none;
 
+    &:active, &:hover {
+        background: $colour-gradient--lighter;
+        box-shadow: $shadow-btn--hover;    
+    }
+
 
     &--longer {
         padding: $space-regular $space-XXXlarge;
     }
+
+    
 }
