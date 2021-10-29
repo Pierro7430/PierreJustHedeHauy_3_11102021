@@ -1,27 +1,47 @@
 .footer_container {
     @include current-size;
-    padding: $space-large $space-medium $space-medium $space-medium;
+    padding: $space-large $space-medium $space-Xlarge $space-medium;
+    
+    @include screen-md {
+        padding: $space-Xlarge 0rem $space-XXlarge 0rem;
+    }
 
-    &__logo {
+    @include screen-xl {
+        padding: $space-XXlarge 0rem $space-XXXlarge 0rem;
+    }
+
+    &__logo {        
         font-family: $font-logo;
         font-size: $font-medium;
         font-weight: $font-weight-regular;
         color: $colour-white;
+
+        @include screen-md {
+            text-align: center;
+        }
     }
-
-
+    
     &__links {
         padding-top: $space-medium;
         display: flex;
         flex-direction: column;
         gap: $space-small;
 
+        @include screen-md {
+            flex-direction: row;
+            justify-content: center;
+            gap: $space-Xlarge;
+        }
+
+        @include screen-xl {
+            gap: $space-XXXlarge;
+        }
+
         li {
             display: flex;
             align-items: center;
             gap: $space-regular;
             
-
             .footer-icon {
                 width: 15px;
                 font-size: $font-small;

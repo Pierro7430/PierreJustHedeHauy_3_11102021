@@ -1,0 +1,42 @@
+/*Animation Menu*/
+/*------------------*/
+
+.anim_menu {
+  opacity: 0;
+  animation: anim-menu;
+  animation-duration: 1000ms;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier (.41,.01,0,1);
+
+  &--1 {
+    animation-delay: 750ms;
+  }
+
+  &--2 {
+    animation-delay: 1000ms;
+  }
+
+  &--3 {
+    animation-delay: 1250ms;
+  }
+
+  &--4 {
+    animation-delay: 1500ms;
+  }
+}
+
+
+@keyframes anim-menu {
+  0% {
+    opacity: 0;
+    bottom: -50px;
+    right: 0;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 0px;
+    right: 0;
+  }
+}

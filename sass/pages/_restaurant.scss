@@ -18,10 +18,21 @@
     margin-top: -3rem;
     position: relative;
 
+    @include screen-md {
+        padding: $space-Xlarge $space-large;
+    }
+
+    @include screen-xl {
+        padding: $space-XXlarge $space-Xlarge;
+    }
+
     &__header {
         display: flex;
         justify-content: space-between;
-        padding-right: $space-regular;
+
+        @include screen-xl {
+            justify-content: center;
+        }
 
         &__title {
             font-family: 'Shrikhand';
@@ -31,21 +42,49 @@
 
         &__icon {
             font-size: $font-XXlarge;
-            color: $colour-middle-grey;
+            padding-right: $space-regular;
+
+            @include screen-xl {
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: $space-XXlarge;
+            }
         }
     }
 
-    &__category {
-        font-size: $space-regular;
-        font-weight: $font-weight-regular;
-        text-transform: uppercase;
-        padding: $space-large 0rem $space-regular 0rem;
-    }
-
-    &__container {
+    &__menu {
         display: flex;
         flex-direction: column;
-        gap: $space-regular;
+        
+        @include screen-xl {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: $space-large;
+        }
+
+        &__category {
+            width: 100%;
+            flex-grow: 1;
+
+            &__title {
+                font-size: $space-regular;
+                font-weight: $font-weight-regular;
+                text-transform: uppercase;
+                padding: $space-large 0rem $space-regular 0rem;
+                
+                @include screen-xl {
+                    text-align: center;
+                }
+
+            }
+        
+            &__container {
+                display: flex;
+                flex-direction: column;
+                gap: $space-regular;
+            }
+        }
     }
 
     &__btn {

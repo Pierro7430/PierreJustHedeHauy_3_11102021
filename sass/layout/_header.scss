@@ -21,6 +21,10 @@
         &__link {
             color: $colour-dark-grey;
             text-decoration: none;
+
+            &:active, &:hover {
+                color: $colour-middle-grey;
+            }
         }
     }
 }

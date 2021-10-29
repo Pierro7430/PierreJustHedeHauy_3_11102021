@@ -77,8 +77,10 @@ $space-XXXlarge: 3.5rem;
 
 
 $padding-general-index: $space-XXlarge $space-medium $space-XXXlarge $space-medium;
-$padding-body-card: $space-small $space-medium $space-small $space-small;
+$padding-general-index-xl: $space-XXXlarge $space-Xlarge $space-XXXlarge $space-Xlarge;
 
+$padding-body-card: $space-small;
+$padding-body-card-xl: $space-large $space-XXlarge $space-large $space-large;
 
 /*Border Radius*/
 /*-------------------*/
@@ -93,3 +95,8 @@ $border-radius-big: calc($border-radius-basic * 2.5);
 
 /*Taille du cercle de l'icône numéro sur la step_card*/
 $size-circle-number: 20px;
+$size-circle-number-xl: 50px;
+
+
+/*Taille checkbox des menus*/
+$size-checkbox: 60px;

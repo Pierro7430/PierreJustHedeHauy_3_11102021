@@ -1,0 +1,49 @@
+/*Animation like*/
+/*------------------*/
+
+.heart {
+    position: relative;
+    z-index: 10;
+    
+    input[type="checkbox"] {
+      display: none;
+    }
+  
+    input[type="checkbox"] + label .heart__normal {
+      color: $colour-middle-grey;
+      cursor: pointer;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+  
+    input[type="checkbox"] + label .heart__liked {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background: $colour-gradient;
+      cursor: pointer;
+  
+      /*Permet au texte et donc à l'icone d'être de prendre la couleur dégradée qui est en fond*/
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+  
+      transform: scale(0);
+      opacity: 0;
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
+  
+    input[type="checkbox"]:checked + label .heart__normal {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+  
+    input[type="checkbox"]:checked + label .heart__liked {
+      transform: scale(1);
+      opacity: 1;
+      transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    }
+}
+  
