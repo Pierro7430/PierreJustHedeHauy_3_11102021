@@ -69,6 +69,7 @@ table {
 /*Valeurs particulières*/
 /*--------------------------*/
 /*Taille du cercle de l'icône numéro sur la step_card*/
+/*Taille checkbox des menus*/
 .shadow-top {
   box-shadow: inset 0px 4px 10px -7px #7E7E7E;
 }
@@ -150,12 +151,25 @@ p {
   color: #353535;
   text-decoration: none;
 }
+.container_header__icon__link:active, .container_header__icon__link:hover {
+  color: #7E7E7E;
+}
 
 .footer_container {
   max-width: 1440px;
   width: auto;
   margin: auto;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2rem 1.5rem 2.5rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .footer_container {
+    padding: 2.5rem 0rem 3rem 0rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer_container {
+    padding: 3rem 0rem 3.5rem 0rem;
+  }
 }
 .footer_container__logo {
   font-family: "Shrikhand";
@@ -163,11 +177,28 @@ p {
   font-weight: 400;
   color: #fff;
 }
+@media (min-width: 768px) {
+  .footer_container__logo {
+    text-align: center;
+  }
+}
 .footer_container__links {
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .footer_container__links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer_container__links {
+    gap: 3.5rem;
+  }
 }
 .footer_container__links li {
   display: flex;
@@ -231,14 +262,36 @@ p {
   margin: auto;
   padding: 3rem 1.5rem 3.5rem 1.5rem;
 }
+@media (min-width: 1200px) {
+  .step {
+    padding: 3.5rem 2.5rem 3.5rem 2.5rem;
+  }
+}
 .step__storage {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   gap: 1rem;
   padding-top: 1.5rem;
   /*Le padding-left dépend de la taille du cercle divisé par deux*/
   padding-left: 10px;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .step__storage {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-left: 0rem;
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .step__storage {
+    padding-top: 1.5rem;
+    gap: 2rem;
+  }
 }
 
 #restaurant {
@@ -246,7 +299,11 @@ p {
   width: auto;
   margin: auto;
   padding: 3rem 1.5rem 3.5rem 1.5rem;
-  background-color: #F6F6F6;
+}
+@media (min-width: 1200px) {
+  #restaurant {
+    padding: 3.5rem 2.5rem 3.5rem 2.5rem;
+  }
 }
 #restaurant .restaurant__storage {
   display: flex;
@@ -254,6 +311,17 @@ p {
   align-items: center;
   gap: 1rem;
   padding-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  #restaurant .restaurant__storage {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1200px) {
+  #restaurant .restaurant__storage {
+    gap: 2rem;
+  }
 }
 
 .illu {
@@ -274,10 +342,24 @@ p {
   margin-top: -3rem;
   position: relative;
 }
+@media (min-width: 768px) {
+  .main {
+    padding: 2.5rem 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .main {
+    padding: 3rem 2.5rem;
+  }
+}
 .main__header {
   display: flex;
   justify-content: space-between;
-  padding-right: 1rem;
+}
+@media (min-width: 1200px) {
+  .main__header {
+    justify-content: center;
+  }
 }
 .main__header__title {
   font-family: "Shrikhand";
@@ -286,15 +368,43 @@ p {
 }
 .main__header__icon {
   font-size: 1.5rem;
-  color: #7E7E7E;
+  padding-right: 1rem;
 }
-.main__category {
+@media (min-width: 1200px) {
+  .main__header__icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 3rem;
+  }
+}
+.main__menu {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .main__menu {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+.main__menu__category {
+  width: 100%;
+  flex-grow: 1;
+}
+.main__menu__category__title {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   padding: 2rem 0rem 1rem 0rem;
 }
-.main__container {
+@media (min-width: 1200px) {
+  .main__menu__category__title {
+    text-align: center;
+  }
+}
+.main__menu__category__container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -304,43 +414,109 @@ p {
   padding: 3rem 0rem 1rem 0rem;
 }
 
+/*Animation loader*/
+/*------------------*/
 .loader {
-  color: #FF79DA;
-  font-size: 20px;
-  margin: 100px auto;
-  width: 1em;
-  height: 1em;
+  /*Permet de superposer le loader par rapport à la taille d'écran*/
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  animation: screen-load 3s;
+  /*Conserve le dernier état de l'animation*/
+  animation-fill-mode: forwards;
+}
+.loader__text {
+  font-weight: 300;
+  animation: text-load 3s infinite linear;
+  font-size: 1.25rem;
+}
+.loader__circle {
+  width: 20vw;
+  height: 20vw;
+  max-width: 300px;
+  max-height: 300px;
   border-radius: 50%;
+  background: linear-gradient(to bottom right, #FF79DA 10%, #9356DC 100%);
   position: relative;
-  text-indent: -9999em;
-  animation: load4 1s infinite linear;
-  transform: translateZ(0);
+  animation: spin-load 1s infinite linear;
+}
+.loader__circle:before {
+  background: #fff;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-@keyframes load4 {
-  0%, 100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+.index {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  animation: index-load;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  animation-duration: 2s;
+}
+
+@keyframes index-load {
+  0% {
+    opacity: 0;
+    height: auto;
   }
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  100% {
+    opacity: 1;
+    height: auto;
   }
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+}
+@keyframes screen-load {
+  0% {
+    opacity: 1;
   }
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    /*Visibility en hidden permet d'enlever le loader même quand il est invisble (sinon les boutons ne sont pas cliquables)*/
+    visibility: hidden;
+  }
+}
+@keyframes text-load {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
   }
   50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    opacity: 0;
   }
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  80% {
+    opacity: 0.8;
   }
-  75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  100% {
+    opacity: 1;
   }
-  87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+}
+@keyframes spin-load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /*Button principal*/
@@ -355,6 +531,7 @@ p {
   padding: 1rem 1.5rem;
   box-shadow: 0px 10px 16px -10px #7E7E7E;
   text-decoration: none;
+  cursor: pointer;
 }
 .btn_main:active, .btn_main:hover {
   background: linear-gradient(to bottom right, #ff93e1 10%, #a16be0 100%);
@@ -371,12 +548,25 @@ p {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding: 1rem 1.5rem 1rem 0rem;
+  padding: 1rem 0rem;
   border-radius: 20px;
   background-color: #F6F6F6;
   box-shadow: 0px 10px 16px -15px #7E7E7E;
   position: relative;
   box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .step_card {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .step_card {
+    padding: 3rem;
+    width: 100%;
+    height: 250px;
+  }
 }
 .step_card__icon {
   text-align: center;
@@ -384,9 +574,26 @@ p {
   width: 20px;
   padding: 0.5rem 1.5rem;
 }
+@media (min-width: 768px) {
+  .step_card__icon {
+    padding: 0.5rem 1rem 0.5rem 0rem;
+  }
+}
+@media (min-width: 1200px) {
+  .step_card__icon {
+    padding: 3.5rem 1.5rem 0rem 0rem;
+    font-size: 1.25rem;
+  }
+}
 .step_card__text {
   font-size: 0.875rem;
   font-weight: 700;
+}
+@media (min-width: 1200px) {
+  .step_card__text {
+    font-size: 1rem;
+    padding-top: 3.5rem;
+  }
 }
 .step_card__number {
   width: 20px;
@@ -402,6 +609,22 @@ p {
   /*La position dépend de la taille du cercle divisé par deux (multiplié par moins 1 car il est positionné en négatif)*/
   left: -10px;
 }
+@media (min-width: 768px) {
+  .step_card__number {
+    /*La position dépend de la taille du cercle divisé par deux (multiplié par moins 1 car il est positionné en négatif)*/
+    top: -10px;
+    left: calc(50% - 10px);
+  }
+}
+@media (min-width: 1200px) {
+  .step_card__number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+    top: 25%;
+    left: calc(50% - 25px);
+  }
+}
 
 /*Card Restaurant*/
 /*-------------------*/
@@ -416,12 +639,36 @@ p {
   cursor: pointer;
   position: relative;
 }
+@media (min-width: 768px) {
+  .restaurant_card {
+    /*La width fait 50% de la div parent moins la largeur de la gap sur 2*/
+    width: calc(50% - 0.75rem);
+  }
+}
+@media (min-width: 1200px) {
+  .restaurant_card {
+    /*La width fait 50% de la div parent moins la largeur de la gap sur 2*/
+    width: calc(50% - 1rem);
+  }
+}
 .restaurant_card:active, .restaurant_card:hover {
   box-shadow: 0px 10px 20px -10px #3e3e3e;
+}
+.restaurant_card__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .restaurant_card__img {
   width: 100%;
   height: 150px;
+}
+@media (min-width: 1200px) {
+  .restaurant_card__img {
+    height: 250px;
+  }
 }
 .restaurant_card__img img {
   width: 100%;
@@ -432,21 +679,29 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+  padding: 0.75rem;
+  box-sizing: border-box;
 }
-.restaurant_card__text {
+@media (min-width: 1200px) {
+  .restaurant_card__body {
+    padding: 2rem 3rem 2rem 2rem;
+  }
+}
+.restaurant_card__body .restaurant_card__caption .restaurant_card__text {
   padding-top: 0.25rem;
 }
-.restaurant_card__link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@media (min-width: 1200px) {
+  .restaurant_card__body .restaurant_card__caption .restaurant_card__text {
+    padding-top: 0.75rem;
+  }
 }
-.restaurant_card__icon {
+.restaurant_card__body .restaurant_card__icon {
   font-size: 1.25rem;
-  color: #7E7E7E;
+}
+@media (min-width: 1200px) {
+  .restaurant_card__body .restaurant_card__icon {
+    font-size: 1.375rem;
+  }
 }
 
 /*Card Menu*/
@@ -454,31 +709,181 @@ p {
 .menu_card {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  width: 100%;
   background-color: #fff;
-  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+  padding: 0.75rem;
   box-shadow: 0px 2px 8px -5px #7E7E7E;
   border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .menu_card:active, .menu_card:hover {
   box-shadow: 0px 2px 15px -5px #7E7E7E;
 }
+.menu_card:active .menu_card__body, .menu_card:hover .menu_card__body {
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+}
+.menu_card:active .menu_card__body__title, .menu_card:hover .menu_card__body__title {
+  width: 100%;
+  transform: translateX(0);
+  transition: width 1s ease-in-out, transform 1s ease-in-out;
+}
+.menu_card:active .menu_card__body__text, .menu_card:hover .menu_card__body__text {
+  width: 100%;
+  transform: translateX(0);
+  transition: width 1s ease-in-out, transform 1s ease-in-out;
+}
+.menu_card:active .menu_card__price, .menu_card:hover .menu_card__price {
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+}
+.menu_card:active .menu_card__checkbox, .menu_card:hover .menu_card__checkbox {
+  visibility: visible;
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+}
+.menu_card:active .menu_card__checkbox .checked, .menu_card:hover .menu_card__checkbox .checked {
+  transform: rotate(360deg);
+  transition: transform 1s ease-in-out;
+}
 .menu_card__body {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  /*Le min width à 0 permet d'avoir au texte ellipsis de fonctionner correctement avec flex*/
+  min-width: 0;
+  flex-grow: 1;
+  /*On translate le body de la largeur de la div &__checkbox*/
+  transform: translateX(60px);
+  transition: transform 1s ease-in-out;
 }
 .menu_card__body__title {
   font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*On translate le titre de la largeur de la div &__checkbox*/
+  transform: translateX(-60px);
+  /*On agrandit la zone titre de la largeur de la div &__checkbox*/
+  width: calc(100% + 60px);
+  transition: width 1s ease-in-out, transform 1s ease-in-out;
 }
 .menu_card__body__text {
   font-size: 0.875rem;
   padding-top: 0.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*On translate le texte de la largeur de la div &__checkbox*/
+  transform: translateX(-60px);
+  /*On agrandit la zone texte de la largeur de la div &__checkbox*/
+  width: calc(100% + 60px);
+  transition: width 1s ease-in-out, transform 1s ease-in-out;
 }
 .menu_card__price {
+  display: flex;
+  align-items: flex-end;
   font-size: 0.875rem;
   font-weight: 700;
-  padding-left: 1rem;
+  padding: 0rem 1.5rem;
+  /*On translate le texte de la largeur de la div &__checkbox*/
+  transform: translateX(60px);
+  transition: transform 1s ease-in-out;
+}
+.menu_card__checkbox {
+  flex: 1 auto auto;
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: -0.75rem;
+  /*On translate la div, en dehors du parent, de la largeur de la div &__checkbox*/
+  transform: translateX(60px);
+  transition: transform 1s ease-in-out;
+}
+.menu_card__checkbox .checked {
+  font-size: 1.25rem;
+  transform: rotate(0);
+  transition: transform 1s ease-in-out;
+}
+
+/*Animation like*/
+/*------------------*/
+.heart {
+  position: relative;
+  z-index: 10;
+}
+.heart input[type=checkbox] {
+  display: none;
+}
+.heart input[type=checkbox] + label .heart__normal {
+  color: #7E7E7E;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.heart input[type=checkbox] + label .heart__liked {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(to bottom right, #FF79DA 10%, #9356DC 100%);
+  cursor: pointer;
+  /*Permet au texte et donc à l'icone d'être de prendre la couleur dégradée qui est en fond*/
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+.heart input[type=checkbox]:checked + label .heart__normal {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.heart input[type=checkbox]:checked + label .heart__liked {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+/*Animation Menu*/
+/*------------------*/
+.anim_menu {
+  opacity: 0;
+  animation: anim-menu;
+  animation-duration: 1000ms;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier 0.41, 0.01, 0, 1;
+}
+.anim_menu--1 {
+  animation-delay: 750ms;
+}
+.anim_menu--2 {
+  animation-delay: 1000ms;
+}
+.anim_menu--3 {
+  animation-delay: 1250ms;
+}
+.anim_menu--4 {
+  animation-delay: 1500ms;
+}
+
+@keyframes anim-menu {
+  0% {
+    opacity: 0;
+    bottom: -50px;
+    right: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+    right: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

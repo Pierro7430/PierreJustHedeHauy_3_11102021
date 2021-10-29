@@ -25,7 +25,7 @@
                     <img src="./images/logo/ohmyfood@2x.svg" alt="logo" title="Accueil">
                  </a>
                  <div class="container_header__icon">
-                    <a class="container_header__icon__link" href="./index.html"><i class="fas fa-arrow-left"></i></a>
+                    <a class="container_header__icon__link" href="./index.html" title="Retour à l'accueil du site"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </header>
@@ -40,101 +40,175 @@
 
                 <div class="main__header">
                     <h1 class="main__header__title">Le délice des sens</h1>
-                    <div class="main__header__icon"><i class="far fa-heart"></i></div>
+                    <div class="main__header__icon">
+                        <div class="heart">
+                            <input type="checkbox" id="heart__checkbox"/>
+                            <label for="heart__checkbox">
+                                <div class="heart__normal">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <div class="heart__liked">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 
 
-                <h2 class="main__category">Entrées</h2>
+                <div class="main__menu">
 
-                <div class="main__container">
+                    <div class="main__menu__category">
 
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Tartare de thon</h3>
-                            <p class="menu_card__body__text">Assaisonné au yuzu</p>
-                        </div>
-                        <p class="menu_card__price">25€</p>
-                    </div>
+                        <h2 class="main__menu__category__title">Entrées</h2>
+    
+                        <div class="main__menu__category__container">
 
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Bouchée de homard croustillant</h3>
-                            <p class="menu_card__body__text">Et sa farandole de petits légumes</p>
-                        </div>
-                        <p class="menu_card__price">35€</p>
-                    </div>
+                            <div class="menu_card anim_menu">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Tartare de thon</h3>
+                                    <p class="menu_card__body__text">Assaisonné au yuzu</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>25€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
 
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Velouté de cèpes</h3>
-                            <p class="menu_card__body__text">Aux truffes</p>
-                        </div>
-                        <p class="menu_card__price">20€</p>
-                    </div>
+                            <div class="menu_card anim_menu anim_menu--1">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Bouchée de homard croustillant</h3>
+                                    <p class="menu_card__body__text">Et sa farandole de petits légumes</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>35€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                            <div class="menu_card anim_menu anim_menu--2">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Velouté de cèpes</h3>
+                                    <p class="menu_card__body__text">Aux truffes</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>20€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                        </div>  
                     
+                    </div>
+
+
+                    <div class="main__menu__category">
+    
+                        <h2 class="main__menu__category__title">Plats</h2>
+    
+                        <div class="main__menu__category__container">
+    
+                            <div class="menu_card anim_menu">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Poulet rôti aux herbes de Provence</h3>
+                                    <p class="menu_card__body__text">Et sa crème de truffe</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>40€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                            <div class="menu_card anim_menu anim_menu--1">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Langouste rôtie</h3>
+                                    <p class="menu_card__body__text">Et ses légumes de saison</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>35€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                            <div class="menu_card anim_menu anim_menu--2">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Côte de boeuf Angus</h3>
+                                    <p class="menu_card__body__text">Et sa purée de panais</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>44€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+
+
+                    <div class="main__menu__category">
+    
+                        <h2 class="main__menu__category__title">Desserts</h2>
+    
+                        <div class="main__menu__category__container">
+
+                            <div class="menu_card anim_menu">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Farandole de desserts</h3>
+                                    <p class="menu_card__body__text">Du chef</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>18€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                            <div class="menu_card anim_menu anim_menu--1">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Crème brulée</h3>
+                                    <p class="menu_card__body__text">Revisitée</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>22€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                            <div class="menu_card anim_menu anim_menu--2">
+                                <div class="menu_card__body">
+                                    <h3 class="menu_card__body__title">Tiramisu</h3>
+                                    <p class="menu_card__body__text">À la noisette</p>
+                                </div>
+                                <div class="menu_card__price">
+                                    <p>23€</p>
+                                </div>
+                                <div class="menu_card__checkbox">
+                                    <i class="far fa-check-circle checked"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+
                 </div>
 
-
-                <h2 class="main__category">Plats</h2>
-
-                <div class="main__container">
-
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Poulet rôti aux herbes de Provence</h3>
-                            <p class="menu_card__body__text">Et sa crème de truffe</p>
-                        </div>
-                        <p class="menu_card__price">40€</p>
-                    </div>
-
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Langouste rôtie</h3>
-                            <p class="menu_card__body__text">Et ses légumes de saison</p>
-                        </div>
-                        <p class="menu_card__price">35€</p>
-                    </div>
-
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Côte de boeuf Angus</h3>
-                            <p class="menu_card__body__text">Et sa purée de panais</p>
-                        </div>
-                        <p class="menu_card__price">44€</p>
-                    </div>
-                    
-                </div>
-
-
-                <h2 class="main__category">Desserts</h2>
-
-                <div class="main__container">
-
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Farandole de desserts</h3>
-                            <p class="menu_card__body__text">Du chef</p>
-                        </div>
-                        <p class="menu_card__price">18€</p>
-                    </div>
-
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Crème brulée</h3>
-                            <p class="menu_card__body__text">Revisitée</p>
-                        </div>
-                        <p class="menu_card__price">22€</p>
-                    </div>
-
-                    <div class="menu_card">
-                        <div class="menu_card__body">
-                            <h3 class="menu_card__body__title">Tiramisu</h3>
-                            <p class="menu_card__body__text">À la noisette</p>
-                        </div>
-                        <p class="menu_card__price">23€</p>
-                    </div>
-                    
-                </div>
 
                 <div class="main__btn">
                     <button class="btn_main btn_main--longer">Commander</button>

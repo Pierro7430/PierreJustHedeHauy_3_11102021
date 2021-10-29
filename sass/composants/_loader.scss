@@ -1,43 +1,123 @@
+/*Animation loader*/
+/*------------------*/
+
 .loader {
-    color: $colour-secondary;
-    font-size: 20px;
-    margin: 100px auto;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    
-    animation: load4 1s infinite linear;
-    
-    transform: translateZ(0);
-  }
- 
-  @keyframes load4 {
-    0%,
+    /*Permet de superposer le loader par rapport à la taille d'écran*/
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: $colour-white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    animation: screen-load 3s;
+    /*Conserve le dernier état de l'animation*/
+    animation-fill-mode: forwards;
+
+    &__text {
+        font-weight: $font-weight-light;
+        animation: text-load 3s infinite linear;
+        font-size: $font-large;
+    }
+
+    &__circle {
+        width: 20vw;
+        height: 20vw;
+        max-width: 300px;
+        max-height: 300px;
+        border-radius: 50%;
+        background: $colour-gradient;
+        position: relative;
+        animation: spin-load 1s infinite linear;
+
+        &:before {
+            background: $colour-white;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            content: '';
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+  
+.index {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: index-load;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    animation-duration: 2s;
+}
+  
+
+  
+@keyframes index-load {
+    0% {
+        opacity: 0;
+        height: auto;
+    }
+
     100% {
-      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+        opacity: 1;
+        height: auto;
     }
-    12.5% {
-      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+}
+
+@keyframes screen-load {
+    0% {
+        opacity: 1;
     }
-    25% {
-      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+
+    70% {
+        opacity: 1;
     }
-    37.5% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+
+    100% {
+        opacity: 0;
+        /*Visibility en hidden permet d'enlever le loader même quand il est invisble (sinon les boutons ne sont pas cliquables)*/
+        visibility: hidden;
     }
+}
+
+@keyframes text-load {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
     50% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+        opacity: 0;
     }
-    62.5% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+
+    80% {
+        opacity: 0.8;
     }
-    75% {
-      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+
+    100% {
+        opacity: 1;
     }
-    87.5% {
-      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+}
+
+@keyframes spin-load {
+    0% {
+        transform: rotate(0deg);
     }
-  }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
   

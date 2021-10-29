@@ -41,14 +41,33 @@
     @include current-size;
     padding: $padding-general-index;
 
+    @include screen-xl {
+    padding: $padding-general-index-xl;
+    }
+
     &__storage {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
         gap: $space-regular;
         padding-top: $space-medium;
         /*Le padding-left dépend de la taille du cercle divisé par deux*/
         padding-left: calc($size-circle-number / 2);
+        box-sizing: border-box;
+
+        @include screen-md {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: $space-small;
+            padding-left: 0rem;
+            padding-top: $space-large;
+        }
+
+        @include screen-xl {
+            padding-top: $space-medium;
+            gap: $space-large;
+        }  
     }
 }
 
@@ -56,7 +75,10 @@
 #restaurant {
     @include current-size;
     padding: $padding-general-index;
-    background-color: $colour-extralight-grey;
+
+    @include screen-xl {
+    padding: $padding-general-index-xl;
+    }
 
     .restaurant__storage {
         display: flex;
@@ -64,5 +86,14 @@
         align-items: center;
         gap: $space-regular;
         padding-top: $space-medium;
+
+        @include screen-md {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @include screen-xl {
+            gap: $space-large;   
+        }
     }
 }
