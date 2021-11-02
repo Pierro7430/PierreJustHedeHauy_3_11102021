@@ -789,7 +789,6 @@ p {
   transition: transform 1s ease-in-out;
 }
 .menu_card__checkbox {
-  flex: 1 auto auto;
   min-width: 60px;
   display: flex;
   justify-content: center;
@@ -858,7 +857,6 @@ p {
   animation-duration: 1000ms;
   animation-delay: 500ms;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier 0.41, 0.01, 0, 1;
 }
 .anim_menu--1 {
   animation-delay: 750ms;
@@ -876,13 +874,11 @@ p {
 @keyframes anim-menu {
   0% {
     opacity: 0;
-    bottom: -50px;
-    right: 0;
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
-    bottom: 0px;
-    right: 0;
+    transform: translateY(0);
   }
 }
 
