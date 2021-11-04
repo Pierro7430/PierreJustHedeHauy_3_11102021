@@ -12,6 +12,15 @@
     box-shadow: $shadow-card;
     position: relative;
     box-sizing: border-box;
+    cursor: pointer;
+
+    &:active, &:hover {
+        background-color: $colour-primary--lighter;
+
+        .step_card__icon {
+            color: $colour-primary;
+        }
+    }
 
     @include screen-md {
         flex-grow: 1;
